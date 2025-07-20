@@ -24,11 +24,20 @@ class _RemoveDataViewState extends State<RemoveDataView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Text('Read Data',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w500),),
+        centerTitle: true,
+      ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-Text("Name:${name??""}"),
-          Text('Email"${emil??""}'),
-        Text("Password:${password??""}"),
+Center(child: Text("Name :${name??""}",style: TextStyle(color: Colors.blue,fontSize: 15),)),
+          SizedBox(height: 20,),
+          Text('Email :${emil??""}',style: TextStyle(color: Colors.blue,fontSize: 15),),
+          SizedBox(height: 20,),
+        Text("Password :${password??""}",style: TextStyle(color: Colors.blue,fontSize: 15),),
+          SizedBox(height: 20,),
           ElevatedButton(onPressed: ()async{
            await userData.clearAll();
            Navigator.pushAndRemoveUntil(
@@ -37,7 +46,7 @@ Text("Name:${name??""}"),
                  (route) => false,
            );
           },
-              child:Text('logout')),
+              child:Text('logout',style: TextStyle(color: Colors.blue),)),
         ],
       ),
     );

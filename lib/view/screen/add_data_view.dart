@@ -35,19 +35,19 @@ class _AddDataViewState extends State<AddDataView> {
               child: TextFormField(
                 controller: userController,
                 decoration: InputDecoration(
-                  hintText: 'enter the username'
+                  hintText: 'username'
                 ),
               ),
             ),
           ),
-
+SizedBox(height: 20,),
           Container(
             height: 50,
             width: 300,
             child: TextFormField(
               controller: emailController,
               decoration: InputDecoration(
-                  hintText: 'enter the email'
+                  hintText: 'email'
               ),
             ),
           ),
@@ -58,13 +58,13 @@ SizedBox(height: 20,),
             child: TextFormField(
               controller: passwordController,
               decoration: InputDecoration(
-                  hintText: 'enter the password'
+                  hintText: 'password',
               ),
             ),
           ),
           SizedBox(height: 35,),
           ElevatedButton(onPressed: ()async{
-            if(userController.text.isEmpty&&emailController.text.isEmpty&&passwordController.text.isEmpty){
+            if(userController.text.isNotEmpty&& emailController.text.isNotEmpty &&passwordController.text.isNotEmpty){
               await userData.addName(userController.text);
               await userData.addEmail(emailController.text);
               await userData.addPassword(passwordController.text);
