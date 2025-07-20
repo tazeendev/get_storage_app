@@ -51,4 +51,7 @@ Future<void>removePassword()async{
 Future<void>removeToken()async{
   await storage.remove('token');
 }
+Future<void> clearAll() async {
+  await storage.erase();
+}
 }
