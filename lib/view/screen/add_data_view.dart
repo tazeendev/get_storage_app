@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage_app/services/user_stored_data/user_stored_data.dart';
-import 'package:get_storage_app/view/screen/remove_data_view.dart';
+
+import 'login_screen_view.dart';
 class AddDataView extends StatefulWidget {
    AddDataView({super.key});
 

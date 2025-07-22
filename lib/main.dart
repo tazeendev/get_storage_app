@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:get_storage_app/core/constants/app_pages/app_pages.dart';
+import 'package:get_storage_app/routes/app_routes.dart';
 import 'package:get_storage_app/view/screen/add_data_view.dart';
 
 main() async {
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Get Storage App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -34,7 +37,8 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home:AddDataView(),
+      initialRoute: AppRoutes.welcome,
+      getPages: AppPage.pages,
     );
   }
 }
