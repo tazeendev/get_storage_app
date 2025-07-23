@@ -4,14 +4,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get_storage_app/core/constants/theme/appcolors.dart';
 
 import '../../routes/app_routes.dart';
-class WelcomeScreen extends StatefulWidget {
+class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
-  @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
-}
-
-class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     double screenWidth=MediaQuery.of(context).size.width;
