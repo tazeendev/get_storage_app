@@ -35,6 +35,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:get_storage_app/core/constants/theme/appcolors.dart';
 
 class AuthController extends GetxController {
   final box = GetStorage();
@@ -81,7 +82,7 @@ class AuthController extends GetxController {
     password.value = pass;
     email.value = mail;
 
-    Get.snackbar("Success", "Account created successfully!");
+    Get.snackbar("Success", "Account created successfully!",backgroundColor: AppColors.LightPinkColor);
   }
 
   void login(String username, String password, String email) {
@@ -93,18 +94,18 @@ class AuthController extends GetxController {
       box.write(keyLoggedIn, true);
       Get.snackbar('Welcome', 'Login successfully');
     } else {
-      Get.snackbar('Error', 'Invalid credentials');
+      Get.snackbar('Error', 'Invalid credentials',backgroundColor: AppColors.LightPinkColor);
     }
   }
   void updatePassword(String newPassword) {
     if (box.hasData(keyPassword)) {
       box.write(keyPassword, newPassword);
-      Get.snackbar('Update Password', 'Password changed successfully');
+      Get.snackbar('Update Password', 'Password changed successfully',backgroundColor: AppColors.LightPinkColor);
     }
   }
   void logout() {
     box.write(keyLoggedIn, false);
-    Get.snackbar('Logout', 'You have been logged out');
+    Get.snackbar('Logout', 'You have been logged out',backgroundColor: AppColors.LightPinkColor);
   }
   }
 
